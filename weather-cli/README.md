@@ -1,56 +1,69 @@
-# Weather CLI App
+# Weather CLI App 🌦️
 
-A simple **Command-Line Interface (CLI) Weather App** built with **Go** that fetches real-time weather updates using WeatherAPI.com. Get instant weather details for any city right from your terminal! 🌍🌦️
+A simple **Weather CLI App** built using **Go** that fetches real-time weather updates for any city.
 
 ## Features 🚀
 
--   🌡️ Get **real-time temperature** (Celsius & Fahrenheit)
--   🥶 **Feels like** temperature support
--   🌤️ Current **weather condition**
--   💨 **Wind speed** and 💧 **humidity** details
--   🔒 Secure **API key handling** with environment variables
+-   Get real-time weather updates for any city 🌍
+-   Supports both **Celsius & Fahrenheit** 🌡️
+-   Displays **"Feels Like" temperature** 🥶
+-   Shows wind speed and humidity 💨💧
+-   Secure API key handling using environment variables 🔒
 
-## Installation 📥
+## Installation & Build Instructions ⚙️
 
 1. **Clone the repository:**
-    ```sh
-    git clone https://github.com/yourusername/Weather-CLI.git
-    cd Weather-CLI
-    ```
-2. **Set up your API key:**
 
-    - Get your API key from [WeatherAPI.com](https://www.weatherapi.com/)
+    ```sh
+    git clone https://github.com/yourusername/GoProjects.git
+    cd GoProjects/weather-cli
+    ```
+
+2. **Set up the API key:**
+
+    - Get a free API key from [WeatherAPI.com](https://www.weatherapi.com/)
     - Set the API key as an environment variable:
         ```sh
         export WEATHER_API_KEY=your_api_key_here
         ```
 
-3. **Run the application:**
+3. **Build the application:**
     ```sh
-    go run main.go <city> [-f]
+    go build weather.go
     ```
-    - Replace `<city>` with the desired city name.
-    - Add `-f` flag to get the temperature in Fahrenheit.
 
-## Example Usage 📌
+## Usage 📌
+
+Run the program with the city name as an argument:
 
 ```sh
-go run main.go London
+weather <city>
 ```
 
-**Output:**
+Example:
 
-```
-🌍 Weather in London, United Kingdom:
-🌡️  Temperature: 15.2 °C
-🥶 Feels Like: 14.5 °C
-🌤️  Condition: Partly Cloudy
-💨 Wind Speed: 12.4 km/h
-💧 Humidity: 65%
+```sh
+weather London
 ```
 
-## Dependencies 🛠️
+To get the temperature in **Fahrenheit**, use the `-f` flag:
 
--   **[tidwall/gjson](https://github.com/tidwall/gjson)** for efficient JSON parsing
--   **net/http** for API requests
--   **os** for handling environment variables
+```sh
+weather London -f
+```
+
+## Example Output 🌍
+
+```
+🌍 Weather in Gorakhpur, India:
+🌡️  Temperature: 36.1 °C
+🥶 Feels Like: 34.6 °C
+🌤️  Condition: Sunny
+💨 Wind Speed: 22.7 km/h
+💧 Humidity: 3%
+```
+
+## Dependencies 📦
+
+-   Go (1.16+ recommended)
+-   [tidwall/gjson](https://github.com/tidwall/gjson) for JSON parsing
